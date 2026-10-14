@@ -1,0 +1,856 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Belinda Prameswari Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Great+Vibes&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: design-studio portfolio. Welcome scene is a design canvas (rulers, bezier pen path, selection box, color wheel, toolbar).
+   Home view = profile, skills, experience (2 tabs), certifications. Project view = design work and projects.
+   Palette: azure, sea teal, deep harbor blue, gold. Type: Bricolage Grotesque (display), Public Sans (body), IBM Plex Mono (data), Great Vibes (script). */
+:root {
+  --bg: #2f86e6;
+  --bg-a: #1c5fd4;
+  --bg-b: #2f86e6;
+  --bg-c: #1fa8d8;
+  --bg-d: #0c5ea8;
+  --glow: rgba(255, 207, 77, .6);
+  --on-bg: #ffffff;
+  --on-label: #ffd66b;
+  --surface: #ffffff;
+  --surface-2: #e8eff9;
+  --ink: #0c1f3d;
+  --muted: #4d6180;
+  --line: #d3deee;
+  --blue: #1558c0;
+  --blue-soft: #dbe8fb;
+  --gold: #8a6510;
+  --gold-soft: #f6ecd0;
+  --glass: rgba(255, 255, 255, .64);
+  --track: rgba(255, 255, 255, .7);
+  --hero-a: #1b6ae6;
+  --hero-b: #0a45bd;
+  --hero-ink: #ffffff;
+  --hero-muted: #c9dbf7;
+  --hero-gold: #f0c869;
+  --shadow: 0 1px 2px rgba(12, 31, 61, .06), 0 8px 24px rgba(12, 31, 61, .08);
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Public Sans", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --font-script: "Great Vibes", "Brush Script MT", cursive;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b3a8a; --bg-a: #0a2a66; --bg-b: #0b3a8a; --bg-c: #0a6a99; --bg-d: #07325e; --glow: rgba(255, 190, 60, .4);
+    --surface: #0d2147; --surface-2: #112a58; --ink: #e8f0fc; --muted: #9db2d4;
+    --line: #1d3a6e; --blue: #6aa3ff; --blue-soft: #13305f; --gold: #f0c869; --gold-soft: #2e2a1a;
+    --glass: rgba(13, 33, 71, .66); --track: rgba(255, 255, 255, .14);
+    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b3a8a; --bg-a: #0a2a66; --bg-b: #0b3a8a; --bg-c: #0a6a99; --bg-d: #07325e; --glow: rgba(255, 190, 60, .4);
+  --surface: #0d2147; --surface-2: #112a58; --ink: #e8f0fc; --muted: #9db2d4;
+  --line: #1d3a6e; --blue: #6aa3ff; --blue-soft: #13305f; --gold: #f0c869; --gold-soft: #2e2a1a;
+  --glass: rgba(13, 33, 71, .66); --track: rgba(255, 255, 255, .14);
+  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+html.locked, html.locked body { overflow: hidden; }
+html, body { cursor: var(--cur, auto); }
+a, button, [data-go] { cursor: var(--cur-link, pointer); }
+.spark { position: fixed; z-index: 200; width: 9px; height: 9px; margin: -4px 0 0 -4px; border-radius: 2px; pointer-events: none; animation: spark .75s ease-out forwards; }
+body {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(900px 420px at 75% 0%, var(--glow), transparent 70%),
+    linear-gradient(180deg, var(--bg-a) 0%, var(--bg-b) 35%, var(--bg-c) 75%, var(--bg-d) 100%);
+  background-repeat: no-repeat;
+  color: var(--ink);
+  font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+  padding-inline: 16px;
+}
+h1, h2, h3, h4 { font-family: var(--font-display); line-height: 1.12; margin: 0; text-wrap: balance; }
+p { margin: 0; }
+a { color: var(--blue); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 6px; }
+.wrap { max-width: 1080px; margin-inline: auto; }
+.mono { font-family: var(--font-mono); }
+.label { font-family: var(--font-mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); }
+
+/* ---------- Welcome scene: a design canvas ---------- */
+.welcome {
+  position: fixed; inset: 0; z-index: 100; overflow: hidden; display: grid; place-items: center; padding: 56px 16px 100px; color: #fff;
+  background:
+    radial-gradient(700px 420px at 78% 6%, var(--glow), transparent 70%),
+    linear-gradient(180deg, var(--bg-a) 0%, var(--bg-b) 48%, var(--bg-c) 100%);
+  transition: transform .9s cubic-bezier(.7, 0, .2, 1), opacity .9s ease;
+}
+.welcome.leaving { transform: translateY(-100%); opacity: .3; }
+.welcome::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, .34) 1.3px, transparent 1.6px); background-size: 28px 28px;
+  -webkit-mask-image: radial-gradient(ellipse at center, #000 25%, transparent 85%); mask-image: radial-gradient(ellipse at center, #000 25%, transparent 85%);
+  animation: gridmove 22s linear infinite; }
+.ruler-t, .ruler-l { position: absolute; z-index: 2; background-color: rgba(6, 30, 90, .4); }
+.ruler-t { top: 0; left: 0; right: 0; height: 20px; border-bottom: 1px solid rgba(255, 255, 255, .35);
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, .8) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, .95) 1px, transparent 1px);
+  background-size: 10px 5px, 50px 10px; background-position: 0 100%, 0 100%; background-repeat: repeat-x; }
+.ruler-l { top: 20px; left: 0; bottom: 0; width: 20px; border-right: 1px solid rgba(255, 255, 255, .35);
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, .8) 1px, transparent 1px), linear-gradient(0deg, rgba(255, 255, 255, .95) 1px, transparent 1px);
+  background-size: 5px 10px, 10px 50px; background-position: 100% 0, 100% 0; background-repeat: repeat-y; }
+.bez { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 1; pointer-events: none; }
+.bez .curve { fill: none; stroke: #fff; stroke-width: 4; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; animation: draw 8s ease-in-out infinite; }
+.bez .curve2 { fill: none; stroke: var(--hero-gold); stroke-width: 3; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 0; animation: draw 8s .5s ease-in-out infinite; opacity: .9; }
+.bez .anchors { animation: anchorfade 8s ease-in-out infinite; }
+.bez .anchors rect { fill: #fff; stroke: #1c5fd4; stroke-width: 2; }
+.bez .anchors circle { fill: var(--hero-gold); stroke: #fff; stroke-width: 1.5; }
+.bez .anchors line { stroke: rgba(255, 255, 255, .75); stroke-width: 1.5; }
+.shape { position: absolute; z-index: 1; animation: floaty var(--d, 9s) ease-in-out infinite; animation-delay: var(--dl, 0s); }
+.s-circle { width: 54px; height: 54px; border-radius: 50%; background: var(--hero-gold); }
+.s-tri { width: 58px; height: 52px; background: rgba(255, 255, 255, .9); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.s-sq { width: 46px; height: 46px; border: 3px solid #fff; border-radius: 8px; }
+.s-ring { width: 76px; height: 76px; border-radius: 50%; border: 9px solid rgba(255, 255, 255, .45); }
+.s-plus { width: 34px; height: 34px; }
+.s-plus::before, .s-plus::after { content: ""; position: absolute; background: #fff; border-radius: 2px; }
+.s-plus::before { left: 14px; top: 0; width: 6px; height: 34px; }
+.s-plus::after { top: 14px; left: 0; height: 6px; width: 34px; }
+.cursor { position: absolute; left: 0; top: 0; z-index: 4; display: flex; align-items: flex-start; pointer-events: none; animation: roam1 14s ease-in-out infinite; }
+.cursor.two { animation-name: roam2; animation-duration: 17s; }
+.cursor svg { width: 46px; height: 46px; filter: drop-shadow(0 3px 4px rgba(0, 0, 0, .3)); transform-origin: 18% 18%; animation: wiggle 1.4s ease-in-out infinite; }
+.cursor span { margin: 28px 0 0 -10px; padding: 3px 9px; border-radius: 0 9px 9px 9px; background: var(--c); color: var(--ct, #fff); font: 600 12px var(--font-body); }
+.w-center { position: relative; z-index: 3; display: grid; justify-items: center; gap: 12px; text-align: center; }
+.wheel { position: relative; width: 140px; height: 140px; margin-bottom: 4px; animation: rise .9s both; }
+.wheel .ring { position: absolute; inset: 0; border-radius: 50%; animation: spin 14s linear infinite;
+  background: conic-gradient(#ff4d6d, #ffb703, #ffe66d, #3ddc97, #1fb6ff, #3b6cf5, #8b5cf6, #ff4d6d);
+  -webkit-mask: radial-gradient(circle, transparent 58%, #000 59%); mask: radial-gradient(circle, transparent 58%, #000 59%); }
+.wheel .core { position: absolute; inset: 24px; border-radius: 50%; display: grid; place-items: center; background: linear-gradient(160deg, #3b8cf5, #0a45bd); border: 3px solid #fff; font-family: var(--font-display); font-weight: 800; font-size: 34px; letter-spacing: -.02em; }
+.w-script { font-family: var(--font-script); font-size: clamp(56px, 12vw, 88px); line-height: 1; color: var(--hero-gold); text-shadow: 0 2px 18px rgba(6, 30, 90, .35); animation: rise .9s .15s both; }
+.w-name { font-size: clamp(30px, 8vw, 56px); font-weight: 800; letter-spacing: -.02em; text-shadow: 0 2px 18px rgba(6, 30, 90, .35); animation: rise .9s .3s both; margin-bottom: 24px; }
+.select { position: relative; display: inline-block; padding: 6px 22px 8px; border: 1.5px solid #fff; animation: selectin .7s 1s both; }
+.select i { position: absolute; width: 10px; height: 10px; background: #fff; border: 2px solid #1c5fd4; }
+.select i:nth-child(1) { left: -6px; top: -6px; } .select i:nth-child(2) { right: -6px; top: -6px; }
+.select i:nth-child(3) { left: -6px; bottom: -6px; } .select i:nth-child(4) { right: -6px; bottom: -6px; }
+.select .dim { position: absolute; right: -4px; top: calc(100% + 12px); white-space: nowrap; background: #0a2a66; color: #fff; font: 500 11px var(--font-mono); letter-spacing: .06em; padding: 3px 9px; border-radius: 6px; text-shadow: none; }
+.w-role { font-family: var(--font-mono); font-size: 12.5px; letter-spacing: .08em; text-transform: uppercase; color: #eaf3ff; animation: rise .9s .45s both; }
+.swatches { display: flex; gap: 14px; animation: rise .9s .55s both; }
+.sw { display: grid; justify-items: center; gap: 4px; font: 400 10px var(--font-mono); color: #eaf3ff; letter-spacing: .04em; }
+.sw b { width: 28px; height: 28px; border-radius: 50%; border: 2px solid #fff; background: var(--c); animation: bounce 2.4s ease-in-out infinite; animation-delay: var(--dl); }
+.enter { margin-top: 10px; border: 0; cursor: pointer; font: 700 16px var(--font-body); background: var(--hero-gold); color: #1b1503; padding: 14px 34px; border-radius: 999px; animation: rise .9s .65s both, ring 2.4s 1.6s ease-out infinite; }
+.enter:hover { filter: brightness(1.07); }
+.toolbar { position: absolute; z-index: 3; bottom: 26px; left: 0; right: 0; margin-inline: auto; width: max-content; display: flex; gap: 6px; padding: 8px; border-radius: 16px; background: rgba(6, 30, 90, .55); border: 1px solid rgba(255, 255, 255, .3); backdrop-filter: blur(8px); animation: rise .9s .8s both; }
+.toolbar .tool { position: relative; z-index: 1; width: 40px; height: 40px; display: grid; place-items: center; }
+.toolbar svg { width: 22px; height: 22px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.tool-hl { position: absolute; z-index: 0; left: 8px; top: 8px; width: 40px; height: 40px; border-radius: 10px; background: #2a7cf0; box-shadow: 0 0 0 1px rgba(255, 255, 255, .6); animation: tools 10s ease-in-out infinite; }
+
+@keyframes gridmove { to { background-position: 28px 28px; } }
+@keyframes wiggle { 0%, 100% { transform: rotate(0deg); } 50% { transform: rotate(-9deg); } }
+@keyframes spark { from { transform: translate(0, 0) rotate(0deg) scale(1); opacity: 1; } to { transform: translate(var(--dx), var(--dy)) rotate(180deg) scale(.3); opacity: 0; } }
+@keyframes draw { 0% { stroke-dashoffset: 1; opacity: 1; } 55% { stroke-dashoffset: 0; opacity: 1; } 88% { stroke-dashoffset: 0; opacity: 1; } 100% { stroke-dashoffset: 0; opacity: 0; } }
+@keyframes anchorfade { 0%, 40% { opacity: 0; } 55%, 88% { opacity: 1; } 100% { opacity: 0; } }
+@keyframes floaty { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 50% { transform: translate(14px, -24px) rotate(28deg); } }
+@keyframes roam1 { 0% { transform: translate(12vw, 66vh); } 25% { transform: translate(30vw, 26vh); } 55% { transform: translate(70vw, 58vh); } 80% { transform: translate(56vw, 18vh); } 100% { transform: translate(12vw, 66vh); } }
+@keyframes roam2 { 0% { transform: translate(80vw, 24vh); } 30% { transform: translate(62vw, 46vh); } 60% { transform: translate(20vw, 22vh); } 100% { transform: translate(80vw, 24vh); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes selectin { from { opacity: 0; transform: scale(1.08); } to { opacity: 1; transform: none; } }
+@keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes tools { 0%, 16% { transform: translateX(0); } 20%, 36% { transform: translateX(46px); } 40%, 56% { transform: translateX(92px); } 60%, 76% { transform: translateX(138px); } 80%, 96% { transform: translateX(184px); } 100% { transform: translateX(0); } }
+@keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@keyframes ring { 0% { box-shadow: 0 0 0 0 rgba(240, 200, 105, .65); } 80%, 100% { box-shadow: 0 0 0 20px rgba(240, 200, 105, 0); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+/* ---------- Nav ---------- */
+.nav { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: color-mix(in srgb, var(--bg) 82%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); margin-inline: -16px; padding-inline: 16px; }
+.nav-in { max-width: 1080px; margin-inline: auto; display: flex; align-items: center; gap: 10px; padding-block: 10px; }
+.brand { font-family: var(--font-display); font-weight: 800; font-size: 18px; color: var(--on-bg); text-decoration: none; letter-spacing: -.01em; flex: none; }
+.brand b { color: var(--on-label); }
+.links { display: flex; gap: 4px; overflow-x: auto; flex: 1; min-width: 0; scrollbar-width: none; }
+.links::-webkit-scrollbar { display: none; }
+.links a { color: var(--on-bg); text-decoration: none; font-size: 14px; font-weight: 500; padding: 6px 10px; border-radius: 999px; white-space: nowrap; }
+.links a:hover { background: rgba(255, 255, 255, .22); }
+.nav-proj { flex: none; text-decoration: none; font-size: 14px; font-weight: 700; padding: 7px 14px; border-radius: 999px; background: var(--on-label); color: #1b1503; }
+.toggle { flex: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: 999px; padding: 6px 12px; font: 500 13px var(--font-body); cursor: pointer; }
+
+/* ---------- Views ---------- */
+.view:not([hidden]) { animation: fadeIn .55s both; }
+
+/* Hero */
+.hero { margin-top: 20px; border-radius: 20px; color: var(--hero-ink); background: radial-gradient(520px 320px at 62% 0%, var(--glow), transparent 72%), linear-gradient(135deg, var(--hero-a), var(--hero-b)); box-shadow: 0 0 0 1px rgba(255, 255, 255, .28), 0 18px 40px rgba(6, 30, 90, .35); position: relative; overflow: hidden; }
+.hero::before { content: ""; position: absolute; inset: 0; background:
+  repeating-linear-gradient(0deg, rgba(255,255,255,.05) 0 1px, transparent 1px 44px),
+  repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 44px); pointer-events: none; }
+.hero-in { position: relative; display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 32px; padding: 48px 40px; align-items: center; }
+.script { font-family: var(--font-script); font-size: 56px; line-height: 1; color: var(--hero-gold); }
+.hero h1 { font-size: clamp(38px, 6vw, 64px); font-weight: 800; letter-spacing: -.02em; margin-top: 4px; }
+.role { margin-top: 12px; font-family: var(--font-mono); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--hero-gold); }
+.hero .lead { margin-top: 18px; color: var(--hero-muted); max-width: 60ch; }
+.hero .lead strong { color: var(--hero-ink); font-weight: 600; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+.btn { display: inline-block; text-decoration: none; font-weight: 600; font-size: 15px; padding: 12px 22px; border-radius: 10px; cursor: pointer; border: 0; font-family: var(--font-body); }
+.btn-gold { background: var(--hero-gold); color: #1b1503; font-weight: 700; }
+.btn-line { border: 1.5px solid rgba(255,255,255,.6); color: var(--hero-ink); background: transparent; }
+.btn:hover { filter: brightness(1.08); }
+.id-card { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.24); border-radius: 18px; padding: 24px; display: grid; gap: 18px; justify-items: start; }
+.photo { position: relative; width: 100%; max-width: 230px; aspect-ratio: 4 / 5; border-radius: 22px; overflow: hidden; border: 3px solid var(--hero-gold); background: linear-gradient(160deg, rgba(255, 255, 255, .2), rgba(255, 255, 255, .06)); box-shadow: 0 12px 28px rgba(6, 30, 90, .35); }
+.photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+.photo.missing img { display: none; }
+.id-rows { display: grid; gap: 12px; width: 100%; }
+.id-row { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; border-top: 1px solid rgba(255,255,255,.2); padding-top: 10px; }
+.id-row span { color: var(--hero-muted); font-size: 13px; }
+.id-row b { font-family: var(--font-mono); font-weight: 500; text-align: right; font-size: 14px; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.badge { font-size: 12.5px; padding: 5px 11px; border-radius: 999px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.26); color: var(--hero-ink); }
+
+/* Stats */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-top: 16px; }
+.stat { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px; box-shadow: var(--shadow); }
+.stat b { display: block; font-family: var(--font-display); font-size: 32px; font-weight: 800; letter-spacing: -.02em; color: var(--blue); font-variant-numeric: tabular-nums; }
+.stat span { font-size: 13px; color: var(--muted); }
+
+/* Sections */
+section { padding-block: 64px 0; scroll-margin-top: 64px; }
+.sec-head { display: grid; gap: 8px; margin-bottom: 24px; }
+.sec-head h2 { color: var(--on-bg); font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -.02em; }
+.sec-head p { color: var(--on-bg); opacity: .92; max-width: 62ch; }
+.sec-head .label { color: var(--on-label); }
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 24px; box-shadow: var(--shadow); min-width: 0; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 16px; }
+.org { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.tag { font-size: 12.5px; font-weight: 500; padding: 4px 10px; border-radius: 999px; background: var(--blue-soft); color: var(--blue); }
+.tag-gold { background: var(--gold-soft); color: var(--gold); }
+
+/* Skills glass card */
+.glass { background: var(--glass); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1.5px solid rgba(255, 255, 255, .8); border-radius: 22px; padding: 28px; box-shadow: 0 18px 40px rgba(6, 30, 90, .25); min-width: 0; }
+.glass h3 { font-size: 32px; font-weight: 800; letter-spacing: -.02em; color: var(--blue); margin-bottom: 18px; }
+.bars { display: grid; gap: 18px; }
+.bar-top { display: flex; justify-content: space-between; gap: 12px; font-weight: 700; font-size: 15.5px; margin-bottom: 7px; }
+.bar-top b { font-family: var(--font-mono); font-weight: 500; font-variant-numeric: tabular-nums; }
+.track { height: 15px; border-radius: 999px; background: var(--track); border: 1px solid rgba(255, 255, 255, .8); overflow: hidden; }
+.fill { position: relative; height: 100%; width: calc(var(--v) * 1%); border-radius: 999px; background: linear-gradient(90deg, #1c5fd4 0%, #1fa8d8 60%, #f0c869 100%); }
+.fill::after { content: ""; position: absolute; left: 6px; right: 6px; top: 2px; height: 4px; border-radius: 999px; background: rgba(255, 255, 255, .45); }
+.glass.armed .fill { width: 0; transition: width 1.5s cubic-bezier(.2, .8, .2, 1) calc(var(--i) * .12s); }
+.glass.armed.in .fill { width: calc(var(--v) * 1%); }
+
+/* Tabs */
+.tabs { display: inline-flex; flex-wrap: wrap; gap: 6px; padding: 5px; border-radius: 999px; background: rgba(255, 255, 255, .2); border: 1px solid rgba(255, 255, 255, .45); margin-bottom: 20px; }
+.tab { border: 0; background: transparent; color: var(--on-bg); font: 600 14px var(--font-body); padding: 9px 20px; border-radius: 999px; cursor: pointer; }
+.tab:hover { background: rgba(255, 255, 255, .2); }
+.tab[aria-selected="true"] { background: var(--surface); color: var(--ink); box-shadow: 0 4px 12px rgba(6, 30, 90, .25); }
+
+/* Featured role */
+.feature h3 { font-size: 28px; font-weight: 800; letter-spacing: -.01em; }
+.feature .sub { color: var(--muted); margin-top: 6px; }
+.feature-body { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 32px; margin-top: 24px; }
+.sub-h { font-family: var(--font-mono); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: 14px; }
+.timeline { list-style: none; margin: 0; padding: 0 0 0 20px; border-left: 2px solid var(--line); display: grid; gap: 18px; }
+.timeline li { position: relative; }
+.timeline li::before { content: ""; position: absolute; left: -27px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 3px solid var(--blue); }
+.timeline li.now::before { background: var(--gold); border-color: var(--gold); }
+.timeline time { font-family: var(--font-mono); font-size: 12px; color: var(--gold); }
+.timeline strong { display: block; font-size: 15px; }
+.timeline span { display: block; font-size: 13.5px; color: var(--muted); }
+.resp { display: grid; gap: 12px; }
+.resp-item { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 16px; align-items: center; background: var(--surface-2); border-radius: 12px; padding: 14px 16px; }
+.resp-item .big { font-family: var(--font-display); font-weight: 800; font-size: 28px; color: var(--blue); line-height: 1; font-variant-numeric: tabular-nums; }
+.resp-item .big small { display: block; font-family: var(--font-mono); font-weight: 400; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-top: 4px; }
+.resp-item p { font-size: 14.5px; }
+
+/* Cards */
+.card h3 { font-size: 21px; font-weight: 700; }
+.card .meta { color: var(--muted); font-size: 14px; margin-top: 4px; }
+.bullets { margin: 16px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.bullets li { position: relative; padding-left: 22px; font-size: 14.5px; }
+.bullets li::before { content: ""; position: absolute; left: 0; top: .6em; width: 10px; height: 2px; background: var(--gold); }
+.mini-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 18px; }
+.mini { background: var(--surface-2); border-radius: 10px; padding: 12px; }
+.mini b { display: block; font-family: var(--font-display); font-size: 22px; color: var(--blue); font-variant-numeric: tabular-nums; }
+.mini span { font-size: 12.5px; color: var(--muted); line-height: 1.35; display: block; }
+.stack { display: grid; gap: 16px; align-content: start; }
+.divider { border: 0; border-top: 1px dashed var(--line); margin: 18px 0 0; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip { font-size: 14px; font-weight: 500; padding: 7px 14px; border-radius: 10px; background: var(--surface-2); border: 1px solid var(--line); }
+.skill-group h3 { font-size: 17px; margin-bottom: 12px; }
+.edu { display: grid; gap: 4px; align-content: start; }
+.edu .yr { font-family: var(--font-mono); font-size: 12px; color: var(--gold); letter-spacing: .08em; }
+.edu h3 { font-size: 19px; }
+.edu p { color: var(--muted); font-size: 14.5px; }
+
+/* Certificates: image on top, caption below */
+.cert-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.cert { margin: 0; overflow: hidden; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); display: grid; align-content: start; }
+.cert-img { position: relative; aspect-ratio: 4 / 3; max-width: 100%; display: grid; place-items: center; padding: 18px; background: linear-gradient(135deg, var(--surface-2), var(--blue-soft)); border-bottom: 1px solid var(--line); }
+.cert-img img { width: 100%; height: 100%; object-fit: contain; }
+.mock { position: relative; width: 78%; aspect-ratio: 1.41; background: #fff; color: #0c1f3d; display: grid; align-content: center; justify-items: center; gap: 6px; padding: 10px; box-shadow: 0 8px 20px rgba(12, 31, 61, .18); outline: 2px solid #e6cf8c; outline-offset: -6px; }
+.mock b { font: 800 clamp(10px, 1.3vw, 14px) var(--font-display); letter-spacing: .14em; }
+.mock i { display: block; height: 4px; width: 66%; background: #d6deea; border-radius: 2px; }
+.mock i:nth-of-type(2) { width: 48%; }
+.mock u { position: absolute; right: 12px; bottom: 10px; width: 18px; height: 18px; border-radius: 50%; background: #f0c869; border: 2px solid #c99a2e; }
+.cpd-badge { position: absolute; top: 10px; right: 10px; font: 500 12px var(--font-mono); letter-spacing: .06em; background: var(--blue); color: #fff; padding: 4px 10px; border-radius: 999px; }
+.cert figcaption { padding: 16px 18px 18px; display: grid; gap: 4px; }
+.cert .issuer { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .06em; text-transform: uppercase; color: var(--gold); }
+.cert h4 { font-size: 17px; font-weight: 700; }
+.cert p { font-size: 13.5px; color: var(--muted); }
+.cpd-title { margin: 36px 0 14px; color: var(--on-bg); }
+
+/* ---------- Project view ---------- */
+.back { margin-top: 22px; display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,.5); background: rgba(255,255,255,.14); color: var(--on-bg); border-radius: 999px; padding: 8px 16px; font: 600 14px var(--font-body); cursor: pointer; }
+.back:hover { background: rgba(255,255,255,.26); }
+.proj-hero { padding-block: 40px 0; }
+.group-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin: 36px 0 14px; color: var(--on-bg); }
+.group-head h3 { font-size: 24px; font-weight: 800; }
+.group-head span { font-family: var(--font-mono); font-size: 13px; color: var(--on-label); }
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.tiles.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.tile { position: relative; overflow: hidden; aspect-ratio: 4 / 5; max-width: 100%; border-radius: 16px; padding: 16px; display: flex; flex-direction: column; justify-content: flex-end; gap: 4px; color: #fff; background: var(--tile); box-shadow: 0 10px 28px rgba(6, 30, 90, .3); border: 1px solid rgba(255,255,255,.3); transition: transform .25s ease; }
+.tile:hover { transform: translateY(-6px) rotate(-.6deg); }
+.tile::before { content: ""; position: absolute; width: 150%; aspect-ratio: 1; right: -60%; top: -45%; border-radius: 50%; background: rgba(255,255,255,.16); }
+.tile::after { content: ""; position: absolute; left: -20%; right: -20%; bottom: 28%; height: 42%; border-radius: 50% 50% 0 0; background: rgba(255,255,255,.1); }
+.tile .ghost { position: absolute; top: 12px; left: 14px; font-family: var(--font-display); font-weight: 800; font-size: clamp(30px, 4.2vw, 46px); letter-spacing: -.02em; opacity: .28; line-height: 1; z-index: 1; }
+.tile h4 { position: relative; z-index: 1; font-size: 18px; font-weight: 800; }
+.tile .kind { position: relative; z-index: 1; font-family: var(--font-mono); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; opacity: .85; }
+.tile.dark-ink { color: #0c1f3d; border-color: rgba(12, 31, 61, .12); }
+.projects-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.pcard { display: grid; gap: 12px; align-content: start; }
+.pcard .big { font-family: var(--font-display); font-weight: 800; font-size: 40px; letter-spacing: -.02em; color: var(--blue); line-height: 1; font-variant-numeric: tabular-nums; }
+.pcard .big small { display: block; font-family: var(--font-mono); font-weight: 400; font-size: 12px; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); margin-top: 6px; }
+.pcard p { font-size: 14.5px; color: var(--muted); }
+.tools-bar { margin-top: 18px; }
+.tools-bar .chip { background: rgba(255,255,255,.9); color: #0c1f3d; }
+.more-cta { margin-top: 36px; display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Contact */
+.contact { background: radial-gradient(520px 320px at 85% 0%, var(--glow), transparent 72%), linear-gradient(135deg, var(--hero-a), var(--hero-b)); box-shadow: 0 0 0 1px rgba(255, 255, 255, .28), 0 18px 40px rgba(6, 30, 90, .35); color: var(--hero-ink); border-radius: 20px; padding: 40px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; }
+.contact h2 { font-size: clamp(28px, 4vw, 40px); font-weight: 800; letter-spacing: -.02em; }
+.contact p { color: var(--hero-muted); margin-top: 12px; max-width: 46ch; }
+.c-list { display: grid; gap: 10px; min-width: 0; }
+.c-row { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 12px; align-items: center; background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22); border-radius: 12px; padding: 10px 12px; }
+.c-row .k { font-family: var(--font-mono); font-size: 11.5px; letter-spacing: .08em; text-transform: uppercase; color: var(--hero-gold); }
+.c-row .v { font-size: 14.5px; overflow-wrap: anywhere; user-select: all; }
+.c-row a { color: var(--hero-ink); text-decoration: none; }
+.c-row a:hover { text-decoration: underline; }
+.skyline { display: block; width: 100%; height: auto; margin-top: 56px; }
+footer { padding-block: 16px 40px; color: var(--on-bg); font-size: 13px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px; }
+
+@media (max-width: 860px) {
+  .hero-in { grid-template-columns: minmax(0, 1fr); padding: 36px 24px; }
+  .feature-body, .contact { grid-template-columns: minmax(0, 1fr); }
+  .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cert-grid, .projects-grid, .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+  .grid-2, .cert-grid, .projects-grid, .grid-3 { grid-template-columns: minmax(0, 1fr); }
+  .tiles.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .resp-item { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .mini-stats { grid-template-columns: minmax(0, 1fr); }
+  .contact { padding: 28px 20px; }
+  .c-row { grid-template-columns: minmax(0, 1fr); }
+  .c-row .k { grid-column: 1 / -1; }
+  .card { padding: 20px; }
+  .glass { padding: 22px 18px; }
+  .script { font-size: 46px; }
+  .toggle { padding: 6px 10px; }
+  .links a { padding: 6px 8px; }
+  .wheel { width: 112px; height: 112px; }
+  .wheel .core { inset: 20px; font-size: 28px; }
+  .swatches { gap: 10px; }
+  .tab { padding: 9px 14px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .welcome *, .welcome, .welcome::before { animation: none !important; }
+  .view:not([hidden]) { animation: none; }
+  .tile { transition: none; }
+  .glass.armed .fill { transition: none; }
+}
+
+/* Image tiles + lightbox viewer */
+.tile.img-tile { padding: 0; font: inherit; text-align: left; cursor: zoom-in; }
+.tile.img-tile::before, .tile.img-tile::after { display: none; }
+.img-tile img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; background: #fff; }
+.img-tile .cap { position: absolute; left: 0; right: 0; bottom: 0; z-index: 1; display: grid; gap: 2px; padding: 34px 14px 12px; background: linear-gradient(transparent, rgba(6, 30, 90, .88)); color: #fff; }
+.img-tile .cap h4 { font-size: 16px; }
+.img-tile .multi { position: absolute; top: 10px; right: 10px; z-index: 2; font: 500 11px var(--font-mono); letter-spacing: .06em; text-transform: uppercase; background: var(--hero-gold); color: #1b1503; padding: 3px 9px; border-radius: 999px; }
+.lightbox { position: fixed; inset: 0; z-index: 150; display: grid; place-items: center; padding: 16px; background: rgba(4, 18, 52, .72); backdrop-filter: blur(4px); }
+.lb-box { position: relative; width: min(100%, 520px); background: var(--surface); color: var(--ink); border-radius: 18px; padding: 14px 14px 16px; box-shadow: 0 24px 60px rgba(0, 0, 0, .4); display: grid; gap: 10px; }
+.lb-stage { position: relative; display: grid; place-items: center; background: var(--surface-2); border-radius: 12px; overflow: hidden; }
+.lb-stage img { display: block; max-width: 100%; max-height: min(62vh, 520px); width: auto; height: auto; object-fit: contain; }
+.lb-close, .lb-prev, .lb-next { position: absolute; z-index: 2; border: 0; cursor: pointer; width: 36px; height: 36px; border-radius: 50%; background: rgba(12, 31, 61, .75); color: #fff; font: 600 20px/1 var(--font-body); display: grid; place-items: center; }
+.lb-close { top: -10px; right: -10px; background: var(--hero-gold); color: #1b1503; }
+.lb-prev { left: 22px; top: 42%; } .lb-next { right: 22px; top: 42%; }
+.lb-cap { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.lb-cap b { font-family: var(--font-display); font-size: 17px; }
+.lb-cap span { font: 400 12px var(--font-mono); color: var(--muted); }
+.lb-dots { display: flex; justify-content: center; gap: 6px; }
+.lb-dots i { width: 8px; height: 8px; border-radius: 50%; background: var(--line); }
+.lb-dots i.on { background: var(--blue); }
+
+/* Experience photos and certificate buttons */
+.exp-photo, .cert-open { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: zoom-in; font: inherit; color: inherit; text-align: left; }
+.exp-photo { margin-bottom: 16px; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
+.exp-photo img { display: block; width: 100%; max-height: 220px; object-fit: cover; }
+.cert-open .cert-img { display: grid; }
+</style>
+
+<!-- Welcome scene: design canvas -->
+<div class="welcome" id="welcome" role="dialog" aria-label="Welcome">
+  <div class="ruler-t" aria-hidden="true"></div>
+  <div class="ruler-l" aria-hidden="true"></div>
+
+  <svg class="bez" viewBox="0 0 1000 600" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path class="curve" pathLength="1" d="M-20 450 C 180 150, 340 650, 540 350 S 860 50, 1020 290"/>
+    <path class="curve2" pathLength="1" d="M-20 520 C 200 260, 420 600, 600 420 S 880 200, 1020 380"/>
+    <g class="anchors">
+      <line x1="540" y1="350" x2="340" y2="650"/><line x1="540" y1="350" x2="740" y2="50"/>
+      <circle cx="340" cy="650" r="6"/><circle cx="740" cy="50" r="6"/>
+      <rect x="-30" y="440" width="14" height="14"/><rect x="533" y="343" width="14" height="14"/><rect x="1013" y="283" width="14" height="14"/>
+    </g>
+  </svg>
+
+  <span class="shape s-circle" style="left:8%;top:22%;--d:9s" aria-hidden="true"></span>
+  <span class="shape s-tri" style="right:10%;top:16%;--d:11s;--dl:-3s" aria-hidden="true"></span>
+  <span class="shape s-sq" style="left:14%;bottom:24%;--d:10s;--dl:-5s" aria-hidden="true"></span>
+  <span class="shape s-ring" style="right:8%;bottom:26%;--d:12s;--dl:-2s" aria-hidden="true"></span>
+  <span class="shape s-plus" style="left:44%;top:9%;--d:8s;--dl:-1s" aria-hidden="true"></span>
+  <span class="shape s-circle" style="right:26%;bottom:16%;width:26px;height:26px;background:#fff;--d:7s;--dl:-4s" aria-hidden="true"></span>
+
+  <div class="cursor" style="--c:#f0c869;--ct:#1b1503" aria-hidden="true">
+    <svg viewBox="0 0 40 40"><g transform="rotate(-45 20 20)" stroke="#0a2a66" stroke-width="1.4" stroke-linejoin="round"><path d="M20 2l-5 8h10z" fill="#f6d9b0"/><path d="M20 2l-1.8 3h3.6z" fill="#0a2a66"/><rect x="15" y="10" width="10" height="20" rx="1.5" fill="#f0c869"/><rect x="15" y="30" width="10" height="3" fill="#cfd8e6"/><path d="M15 33h10v2.5a2.5 2.5 0 0 1-2.5 2.5h-5A2.5 2.5 0 0 1 15 35.5z" fill="#ff7aa2"/><g stroke="none"><circle cx="18" cy="17" r="1.2" fill="#0a2a66"/><circle cx="22" cy="17" r="1.2" fill="#0a2a66"/><circle cx="16.6" cy="20.5" r="1.3" fill="#ff9db8"/><circle cx="23.4" cy="20.5" r="1.3" fill="#ff9db8"/></g><path d="M18 20.5q2 2.2 4 0" fill="none" stroke-linecap="round"/></g></svg><span>Belinda</span>
+  </div>
+  <div class="cursor two" style="--c:#12a37f" aria-hidden="true">
+    <svg viewBox="0 0 40 40"><g stroke="#0a2a66" stroke-width="1.4" stroke-linejoin="round"><path d="M20 4C20 4 8 18 8 26a12 12 0 0 0 24 0C32 18 20 4 20 4z" fill="#3ba0ff"/><g stroke="none"><ellipse cx="14.5" cy="22" rx="2" ry="3.4" fill="#fff" opacity=".55"/><circle cx="16.5" cy="27" r="1.4" fill="#0a2a66"/><circle cx="23.5" cy="27" r="1.4" fill="#0a2a66"/><circle cx="14.4" cy="30" r="1.6" fill="#ff9db8"/><circle cx="25.6" cy="30" r="1.6" fill="#ff9db8"/></g><path d="M18 30.2q2 2.6 4 0" fill="none" stroke-linecap="round"/></g><path d="M33 3l1.3 3.2L37.5 7.5l-3.2 1.3L33 12l-1.3-3.2L28.5 7.5l3.2-1.3z" fill="#f0c869" stroke="#0a2a66" stroke-width="1"/></svg><span>You</span>
+  </div>
+
+  <div class="w-center">
+    <div class="wheel" aria-hidden="true"><div class="ring"></div><div class="core">BP</div></div>
+    <div class="w-script">Welcome</div>
+    <h1 class="w-name"><span class="select"><i></i><i></i><i></i><i></i>Belinda Prameswari<span class="dim">Graphic Designer</span></span></h1>
+    <p class="w-role">Social Media Design · Marketing Visual · Ui/Ux Design</p>
+    <div class="swatches" aria-hidden="true">
+      <div class="sw"><b style="--c:#1c5fd4;--dl:0s"></b>#1C5FD4</div>
+      <div class="sw"><b style="--c:#1fa8d8;--dl:.2s"></b>#1FA8D8</div>
+      <div class="sw"><b style="--c:#f0c869;--dl:.4s"></b>#F0C869</div>
+      <div class="sw"><b style="--c:#0a2a66;--dl:.6s"></b>#0A2A66</div>
+      <div class="sw"><b style="--c:#ffffff;--dl:.8s"></b>#FFFFFF</div>
+    </div>
+    <button class="enter" id="enterBtn" type="button">Masuk ke Portofolio</button>
+  </div>
+
+  <div class="toolbar" aria-hidden="true">
+    <i class="tool-hl"></i>
+    <span class="tool"><svg viewBox="0 0 24 24"><path d="M5 3l14 8-7 2-3 7z"/></svg></span>
+    <span class="tool"><svg viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></svg></span>
+    <span class="tool"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="14" rx="2"/></svg></span>
+    <span class="tool"><svg viewBox="0 0 24 24"><path d="M5 6V4h14v2M12 4v16M9 20h6"/></svg></span>
+    <span class="tool"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/></svg></span>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" data-go="top">Belinda<b>.</b>P</a>
+    <nav class="links" aria-label="Bagian">
+      <a href="#profile" data-go="profile">Profil</a>
+      <a href="#skills" data-go="skills">Skills</a>
+      <a href="#experience" data-go="experience">Pengalaman</a>
+      <a href="#certifications" data-go="certifications">Sertifikat</a>
+      <a href="#contact" data-go="contact">Kontak</a>
+    </nav>
+    <a class="nav-proj" href="#projects" data-go="projects">Project</a>
+    <button class="toggle" id="themeBtn" type="button" aria-label="Ganti tema terang atau gelap">Tema</button>
+  </div>
+</header>
+
+<main class="wrap" id="top">
+
+  <!-- Home view: profile, skills, experience, certifications -->
+  <div class="view" id="homeView">
+    <div class="hero" id="profile">
+      <div class="hero-in">
+        <div>
+          <div class="script">Hi, I'm</div>
+          <h1>Belinda Prameswari</h1>
+          <p class="role">Social Media Design · Marketing Visual · Ui/Ux Design</p>
+          <p class="lead">High-achieving Accounting undergraduate at <strong>University of Sultan Ageng Tirtayasa</strong> (GPA <strong>3.84/4.00</strong>) with hands-on experience in <strong>corporate tax administration at PT Pelabuhan Indonesia (Persero)</strong> and as a tax assistant at DJP Banten. Strong in financial data analysis, compliance, and internal controls. Active President of IAI Muda Banten, with sharp analytical skills, close attention to detail, and a clear career focus on External Audit, Taxation and Financial Accounting.</p>
+          <div class="badges">
+            <span class="badge">BNSP Junior Graphic Design</span>
+            <span class="badge">+3 more certifications</span>
+          </div>
+          <div class="cta">
+            <a class="btn btn-gold" href="#projects" data-go="projects">Lihat Project &rarr;</a>
+            <a class="btn btn-line" href="#experience" data-go="experience">Lihat Pengalaman</a>
+          </div>
+        </div>
+        <aside class="id-card" aria-label="Fakta singkat">
+          <!-- Foto profil: simpan file bernama profil-belinda.jpeg di folder yang sama dengan file ini -->
+          <div class="photo">
+            <img id="photoImg" src="foto-belinda.jpeg" alt="Foto Belinda Prameswari">
+          </div>
+          <div class="id-rows">
+            <div class="id-row"><span>University</span><b>Electronic Engineering Polytechnic Institute of Surabaya</b></div>
+            <div class="id-row"><span>Also</span><b>Graphic Designer</b></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <section id="skills">
+      <div class="sec-head">
+        <span class="label">Skills and tools</span>
+        <h2>What I do best</h2>
+        <p>Design skills first, from graphic design to UI/UX, blending creativity with intuitive and user-centered digital experiences.</p>
+      </div>
+      <div class="grid-2">
+        <div class="glass" id="skillsCard">
+          <h3>Skills</h3>
+          <div class="bars">
+            <div class="bar" style="--v:95;--i:0"><div class="bar-top"><span>Social Media Design</span><b class="pct" data-v="95">95%</b></div><div class="track"><div class="fill"></div></div></div>
+            <div class="bar" style="--v:90;--i:1"><div class="bar-top"><span>Ui/Ux Design</span><b class="pct" data-v="90">90%</b></div><div class="track"><div class="fill"></div></div></div>
+            <div class="bar" style="--v:85;--i:2"><div class="bar-top"><span>Editor Video</span><b class="pct" data-v="85">85%</b></div><div class="track"><div class="fill"></div></div></div>
+            <div class="bar" style="--v:75;--i:3"><div class="bar-top"><span>Fotografi</span><b class="pct" data-v="75">80%</b></div><div class="track"><div class="fill"></div></div></div>
+            <div class="bar" style="--v:65;--i:4"><div class="bar-top"><span>Branding</span><b class="pct" data-v="65">65%</b></div><div class="track"><div class="fill"></div></div></div>
+          </div>
+        </div>
+        <div class="card skill-group">
+          <h3>Design and video</h3>
+          <div class="chips"><span class="chip">Adobe Illustrator</span><span class="chip">Adobe Photoshop</span><span class="chip">Canva</span><span class="chip">CapCut</span></div>
+          <hr class="divider">
+          <h3 style="margin-top:18px">Database & Programming</h3>
+          <div class="chips"><span class="chip">Odoo,</span><span class="chip">XAMPP</span><span class="chip">HTML</span><span class="chip">Python</span></div>
+          <hr class="divider">
+          <h3 style="margin-top:18px">Office</h3>
+          <div class="chips"><span class="chip">Microsoft Word</span><span class="chip">Microsoft Excel</span><span class="chip">Microsoft PowerPoint</span></div>
+        </div>
+      </div>
+      <div class="grid-3">
+        <div class="card edu"><span class="yr">2024 – NOW</span><h3>Electronic Engineering Polytechnic Institute of Surabaya</h3><p>Multimedia Engineering Technology</p></div>
+        <div class="card edu"><span class="yr">2021-2024</span><h3>SMK Negeri 10 Surabaya</h3><p>Multimedia</p></div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="sec-head">
+        <span class="label">Work and internship experience</span>
+        <h2>Where I have worked</h2>
+        <p>Experience in Graphic Design and UI/UX Design, creating impactful visuals and intuitive digital experiences for organizations and creative projects.</p>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <button class="exp-photo" type="button" data-imgs="Magang-1.png" data-title="PT. Ternaknesia Farm Innovation"><img src="Magang-1.png" alt="PT. Ternaknesia Farm Innovation" loading="lazy" onerror="this.closest('button').hidden=true"></button>
+          <div class="org"><span class="tag tag-gold">March – June 2023</span><span class="tag">Surabaya</span></div>
+          <h3>PT. Ternaknesia Farm Innovation</h3>
+          <p class="meta">Graphic Design Intern</p>
+          <ul class="bullets">
+            <li>Managed social media graphic design, marketplace operations, and Odoo-based sales and inventory systems to support daily business efficiency.</li>
+            <li>Provided responsive customer service and coordinated digital marketing assets to drive engagement and operational workflows.</li>
+          </ul>
+        </article>
+        <article class="card">
+          <button class="exp-photo" type="button" data-imgs="Magang-2.png" data-title="PT. Flashcom Indonesia"><img src="Magang-2.png" alt="PT. Flashcom Indonesia" loading="lazy" onerror="this.closest('button').hidden=true"></button>
+          <div class="org"><span class="tag tag-gold">October – January 2023</span><span class="tag">Surabaya</span></div>
+          <h3>PT. Flashcom Indonesia</h3>
+          <p class="meta">Graphic Design Intern</p>
+          <ul class="bullets">
+            <li>Designed compelling social media graphics, including feeds, posters, and brochures, to elevate digital communication and promotional efforts.</li>
+            <li>Managed class documentation and organized operational reports efficiently using Microsoft Excel.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="sec-head">
+        <span class="label">Certifications</span>
+        <h2>Credentials and continuing education</h2>
+        <p>Nine certificates collected along the way. Click a certificate to view it.</p>
+      </div>
+      <div class="cert-grid">
+        <figure class="cert"><button class="cert-open" type="button" data-imgs="Belinda Panitia DTMK CUP.png" data-title="Panitia DTMK Cup"><span class="cert-img"><img src="Belinda Panitia DTMK CUP.png" alt="Sertifikat Panitia DTMK Cup" loading="lazy" onerror="this.style.display='none'"></span></button><figcaption><h4>Panitia DTMK Cup</h4></figcaption></figure>
+        <figure class="cert"><button class="cert-open" type="button" data-imgs="Belinda Panitia Tchnogear.png" data-title="Panitia Technogear"><span class="cert-img"><img src="Belinda Panitia Tchnogear.png" alt="Sertifikat Panitia Technogear" loading="lazy" onerror="this.style.display='none'"></span></button><figcaption><h4>Panitia Technogear</h4></figcaption></figure>
+        <figure class="cert"><button class="cert-open" type="button" data-imgs="ContentCreator.png" data-title="Content Creator"><span class="cert-img"><img src="ContentCreator.png" alt="Sertifikat Content Creator" loading="lazy" onerror="this.style.display='none'"></span></button><figcaption><h4>Content Creator</h4></figcaption></figure>
+        <figure class="cert"><button class="cert-open" type="button" data-imgs="Entrepeneur.png" data-title="Entrepreneur"><span class="cert-img"><img src="Entrepeneur.png" alt="Sertifikat Entrepreneur" loading="lazy" onerror="this.style.display='none'"></span></button><figcaption><h4>Entrepreneur</h4></figcaption></figure>
+        <figure class="cert"><button class="cert-open" type="button" data-imgs="PDD - Belinda Prameswari DTMK EXPO.png" data-title="PDD DTMK Expo"><span class="cert-img"><img src="PDD - Belinda Prameswari DTMK EXPO.png" alt="Sertifikat PDD DTMK Expo" loading="lazy" onerror="this.style.display='none'"></span></button><figcaption><h4>PDD DTMK Expo</h4></figcaption></figure>
+        <figure class="cert"><button class="cert-open" type="button" data-imgs="PersonalBranding.png" data-title="Personal Branding"><span class="cert-img"><img src="PersonalBranding.png" alt="Sertifikat Personal Branding" loading="lazy" onerror="this.style.display='none'"></span></button><figcaption><h4>Personal Branding</h4></figcaption></figure>
+        <figure class="cert"><button class="cert-open" type="button" data-imgs="PublicSpeaking.png" data-title="Public Speaking"><span class="cert-img"><img src="PublicSpeaking.png" alt="Sertifikat Public Speaking" loading="lazy" onerror="this.style.display='none'"></span></button><figcaption><h4>Public Speaking</h4></figcaption></figure>
+        <figure class="cert"><button class="cert-open" type="button" data-imgs="Sertif Lomb Sobat Bumi.jpeg" data-title="Lomba Sobat Bumi"><span class="cert-img"><img src="Sertif Lomb Sobat Bumi.jpeg" alt="Sertifikat Lomba Sobat Bumi" loading="lazy" onerror="this.style.display='none'"></span></button><figcaption><h4>Lomba Sobat Bumi</h4></figcaption></figure>
+        <figure class="cert"><button class="cert-open" type="button" data-imgs="Sertifikat Panitia Belinda Prameswari IF.png" data-title="Panitia IF"><span class="cert-img"><img src="Sertifikat Panitia Belinda Prameswari IF.png" alt="Sertifikat Panitia IF" loading="lazy" onerror="this.style.display='none'"></span></button><figcaption><h4>Panitia IF</h4></figcaption></figure>
+      </div>
+      <div class="more-cta">
+        <a class="btn btn-gold" href="#projects" data-go="projects">Lihat Project &rarr;</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Project view: design work and projects -->
+  <div class="view" id="projectsView" hidden>
+    <button class="back" type="button" data-go="top">&larr; Kembali ke profil</button>
+
+    <div class="proj-hero">
+      <div class="sec-head">
+        <span class="label">Project</span>
+        <h2>Design and project work</h2>
+      </div>
+    </div>
+
+    <div class="group-head"><h3>Design Project</h3><span>Graphic Designer · UI/UX · Social Media</span></div>
+    <div class="tiles">
+      <button class="tile img-tile" type="button" data-imgs="1-Aplikasi MyRateBook.png" data-title="Aplikasi MyRateBook" style="--tile:linear-gradient(160deg,#2a7cf0,#0a3a99)"><img src="1-Aplikasi MyRateBook.png" alt="Aplikasi MyRateBook" loading="lazy"><span class="cap"><span class="kind">UI/UX</span><h4>Aplikasi MyRateBook</h4></span></button>
+      <button class="tile img-tile" type="button" data-imgs="1-banner.png" data-title="Banner" style="--tile:linear-gradient(160deg,#18c0de,#1058c8)"><img src="1-banner.png" alt="Banner" loading="lazy"><span class="cap"><span class="kind">Banner</span><h4>Banner</h4></span></button>
+      <button class="tile img-tile" type="button" data-imgs="1-Desain Karakter 2D.png" data-title="Desain Karakter 2D" style="--tile:linear-gradient(160deg,#55c7ff,#1a6be0)"><img src="1-Desain Karakter 2D.png" alt="Desain Karakter 2D" loading="lazy"><span class="cap"><span class="kind">Illustration</span><h4>Desain Karakter 2D</h4></span></button>
+      <button class="tile img-tile" type="button" data-imgs="1-desain kemasan pupuk.png" data-title="Desain Kemasan Pupuk" style="--tile:linear-gradient(160deg,#1c5fd4,#082a66)"><img src="1-desain kemasan pupuk.png" alt="Desain Kemasan Pupuk" loading="lazy"><span class="cap"><span class="kind">Packaging</span><h4>Desain Kemasan Pupuk</h4></span></button>
+      <button class="tile img-tile" type="button" data-imgs="1-Desain Poster.png|2-Desain Poster.png" data-title="Desain Poster" style="--tile:linear-gradient(160deg,#2a7cf0,#0a3a99)"><img src="1-Desain Poster.png" alt="Desain Poster" loading="lazy"><span class="multi">Carousel</span><span class="cap"><span class="kind">Poster</span><h4>Desain Poster</h4></span></button>
+      <button class="tile img-tile" type="button" data-imgs="1-Desain Sertifikat.png" data-title="Desain Sertifikat" style="--tile:linear-gradient(160deg,#18c0de,#1058c8)"><img src="1-Desain Sertifikat.png" alt="Desain Sertifikat" loading="lazy"><span class="cap"><span class="kind">Certificate</span><h4>Desain Sertifikat</h4></span></button>
+      <button class="tile img-tile" type="button" data-imgs="1-desain story instagram.png" data-title="Desain Story Instagram" style="--tile:linear-gradient(160deg,#55c7ff,#1a6be0)"><img src="1-desain story instagram.png" alt="Desain Story Instagram" loading="lazy"><span class="cap"><span class="kind">Social media</span><h4>Desain Story Instagram</h4></span></button>
+      <button class="tile img-tile" type="button" data-imgs="1-feed.png|2-feed instagram.png" data-title="Feed Instagram" style="--tile:linear-gradient(160deg,#1c5fd4,#082a66)"><img src="1-feed.png" alt="Feed Instagram" loading="lazy"><span class="multi">Carousel</span><span class="cap"><span class="kind">Social media</span><h4>Feed Instagram</h4></span></button>
+      <button class="tile img-tile" type="button" data-imgs="1-logo branding.png" data-title="Logo Branding" style="--tile:linear-gradient(160deg,#2a7cf0,#0a3a99)"><img src="1-logo branding.png" alt="Logo Branding" loading="lazy"><span class="cap"><span class="kind">Identity</span><h4>Logo Branding</h4></span></button>
+      <button class="tile img-tile" type="button" data-imgs="1-mockup.png|2-mockup.png" data-title="Mockup" style="--tile:linear-gradient(160deg,#18c0de,#1058c8)"><img src="1-mockup.png" alt="Mockup" loading="lazy"><span class="multi">Carousel</span><span class="cap"><span class="kind">Mockup</span><h4>Mockup</h4></span></button>
+      <button class="tile img-tile" type="button" data-imgs="1-photography.png" data-title="Photography" style="--tile:linear-gradient(160deg,#55c7ff,#1a6be0)"><img src="1-photography.png" alt="Photography" loading="lazy"><span class="cap"><span class="kind">Photography</span><h4>Photography</h4></span></button>
+      <button class="tile img-tile" type="button" data-imgs="1-Desain Kaos.png" data-title="Desain Kaos" style="--tile:linear-gradient(160deg,#1c5fd4,#082a66)"><img src="1-Desain Kaos.png" alt="Desain Kaos" loading="lazy"><span class="cap"><span class="kind">Apparel</span><h4>Desain Kaos</h4></span></button>
+    </div>
+
+    <div class="group-head"><h3>Design Projects</h3><span>Creative work with visual impact</span></div>
+    <div class="projects-grid">
+      <article class="card pcard">
+        <div class="big">01<small>Graphic Design</small></div>
+        <h3>Visual Designs Created</h3>
+        <p>Designed visual materials for organizations, events, and social media, focusing on strong visual identity, clear communication, and engaging layouts.</p>
+        <div class="chips"><span class="chip">Adobe Illustrator</span><span class="chip">Adobe Photoshop</span><span class="chip">Canva</span></div>
+      </article>
+      <article class="card pcard">
+        <div class="big">02<small>UI/UX Design</small></div>
+        <h3>User-Centered Interfaces</h3>
+        <p>Designed intuitive user interfaces and interactive prototypes in Figma, focusing on user experience, usability, and clean visual layouts.</p>
+        <div class="chips"><span class="chip">Figma</span><span class="chip">Wireframing</span><span class="chip">Prototyping</span></div>
+      </article>
+      <article class="card pcard">
+        <div class="big">03<small>Social Media Design</small></div>
+        <h3>Creative Content &amp; Branding</h3>
+        <p>Created engaging social media visuals, Instagram Stories, promotional content, and event graphics to strengthen digital communication and visual identity.</p>
+        <div class="chips"><span class="chip">Social Media</span><span class="chip">Visual Branding</span><span class="chip">Digital Content</span></div>
+      </article>
+    </div>
+
+    <div class="more-cta">
+      <button class="btn btn-gold" type="button" data-go="top">&larr; Kembali ke profil</button>
+      <button class="btn btn-line" type="button" data-go="contact">Hubungi saya</button>
+    </div>
+  </div>
+
+  <section id="contact" style="padding-bottom:0">
+    <div class="contact">
+      <div>
+        <span class="label" style="color:var(--hero-gold)">Contact</span>
+        <h2 style="margin-top:10px">Let's Create Something Great Together.</h2>
+        <p>I’m open to graphic design projects, UI/UX design opportunities, internships, and entry-level positions. Feel free to reach out via WhatsApp or email to discuss ideas, collaborations, or creative opportunities.</p>
+      </div>
+      <div class="c-list">
+        <div class="c-row"><span class="k">WhatsApp</span><span class="v"><a href="https://wa.me/6285750320868" target="_blank" rel="noopener">0857 5032 0868</a></span></div>
+        <div class="c-row"><span class="k">Email</span><span class="v"><a href="mailto:belindaprameswari4@gmail.com">belindaprameswari4@gmail.com</a></span></div>
+        <div class="c-row"><span class="k">Instagram</span><span class="v"><a href="https://www.instagram.com/belindapwr_" target="_blank" rel="noopener">@belindapwr_</a></span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="wrap">
+  <svg class="skyline" viewBox="0 0 1080 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" fill="#08306e" fill-opacity=".5">
+    <rect x="0" y="72" width="58" height="48"/><rect x="66" y="42" width="38" height="78"/><rect x="112" y="60" width="52" height="60"/>
+    <rect x="172" y="28" width="32" height="92"/><rect x="212" y="78" width="70" height="42"/>
+    <path d="M320 120V34h112v8H332v78z"/><path d="M366 34l22-24 22 24z"/><rect x="440" y="96" width="36" height="24"/><rect x="480" y="96" width="36" height="24"/><rect x="460" y="72" width="36" height="24"/>
+    <path d="M560 120V50h10v70zM640 120V50h10v70zM556 50h98v8h-98z"/>
+    <rect x="700" y="64" width="46" height="56"/><rect x="754" y="36" width="34" height="84"/><rect x="796" y="70" width="58" height="50"/>
+    <rect x="862" y="22" width="30" height="98"/><rect x="900" y="54" width="48" height="66"/><rect x="956" y="80" width="62" height="40"/><rect x="1026" y="48" width="54" height="72"/>
+  </svg>
+</div>
+<footer class="wrap">
+  <span>© 2026 Belinda Prameswari</span>
+  <span class="mono">Portfolio 2026</span>
+</footer>
+
+<div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Pratinjau project">
+  <div class="lb-box">
+    <button class="lb-close" id="lbClose" type="button" aria-label="Tutup">&times;</button>
+    <div class="lb-stage">
+      <button class="lb-prev" id="lbPrev" type="button" aria-label="Sebelumnya">&lsaquo;</button>
+      <img id="lbImg" alt="">
+      <button class="lb-next" id="lbNext" type="button" aria-label="Berikutnya">&rsaquo;</button>
+    </div>
+    <div class="lb-cap"><b id="lbTitle"></b><span id="lbCount"></span></div>
+    <div class="lb-dots" id="lbDots"></div>
+  </div>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var welcome = document.getElementById("welcome");
+  var homeView = document.getElementById("homeView");
+  var projView = document.getElementById("projectsView");
+  var enterBtn = document.getElementById("enterBtn");
+
+  /* Cute mouse pointer: smiling pencil (default) and a happy pencil with sparkle (links) */
+  var penBody = "<g transform='rotate(-45 20 20)' stroke='#0a2a66' stroke-width='1.4' stroke-linejoin='round'><path d='M20 2l-5 8h10z' fill='#f6d9b0'/><path d='M20 2l-1.8 3h3.6z' fill='#0a2a66'/><rect x='15' y='10' width='10' height='20' rx='1.5' fill='#f0c869'/><rect x='15' y='30' width='10' height='3' fill='#cfd8e6'/><path d='M15 33h10v2.5a2.5 2.5 0 0 1-2.5 2.5h-5A2.5 2.5 0 0 1 15 35.5z' fill='#ff7aa2'/><g stroke='none'><circle cx='18' cy='17' r='1.2' fill='#0a2a66'/><circle cx='22' cy='17' r='1.2' fill='#0a2a66'/><circle cx='16.6' cy='20.5' r='1.3' fill='#ff9db8'/><circle cx='23.4' cy='20.5' r='1.3' fill='#ff9db8'/></g>";
+  var penHead = "<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'>";
+  var penSmile = penHead + penBody + "<path d='M18 20.5q2 2.2 4 0' fill='none' stroke-linecap='round'/></g></svg>";
+  var penHappy = penHead + penBody + "<path d='M18 20q2 3.6 4 0z' fill='#0a2a66'/></g><path d='M33 3l1.4 3.6L38 8l-3.6 1.4L33 13l-1.4-3.6L28 8l3.6-1.4z' fill='#f0c869' stroke='#0a2a66' stroke-width='1'/></svg>";
+  var mk = function (svg, fallback) { return 'url("data:image/svg+xml;utf8,' + encodeURIComponent(svg) + '") 7 7, ' + fallback; };
+  root.style.setProperty("--cur", mk(penSmile, "auto"));
+  root.style.setProperty("--cur-link", mk(penHappy, "pointer"));
+
+  /* Click sparkles */
+  var reduceM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.addEventListener("click", function (e) {
+    if (reduceM) return;
+    var cols = ["#f0c869", "#ff7aa2", "#1fa8d8", "#1c5fd4", "#ffffff"];
+    for (var i = 0; i < 8; i++) {
+      var s = document.createElement("i");
+      s.className = "spark";
+      var ang = (Math.PI * 2 * i) / 8 + Math.random() * 0.5;
+      var d = 26 + Math.random() * 28;
+      s.style.left = e.clientX + "px";
+      s.style.top = e.clientY + "px";
+      s.style.background = cols[i % cols.length];
+      s.style.setProperty("--dx", Math.cos(ang) * d + "px");
+      s.style.setProperty("--dy", Math.sin(ang) * d + "px");
+      if (i % 2) s.style.borderRadius = "50%";
+      document.body.appendChild(s);
+      setTimeout((function (n) { return function () { n.remove(); }; })(s), 800);
+    }
+  }, true);
+
+  /* Welcome scene */
+  root.classList.add("locked");
+  function enter() {
+    welcome.classList.add("leaving");
+    root.classList.remove("locked");
+    setTimeout(function () { welcome.hidden = true; }, 950);
+  }
+  enterBtn.addEventListener("click", enter);
+  try { enterBtn.focus({ preventScroll: true }); } catch (e) {}
+
+  /* View switching */
+  function show(view) {
+    homeView.hidden = view !== "home";
+    projView.hidden = view !== "projects";
+  }
+  function go(id) {
+    if (id === "projects") {
+      show("projects");
+      window.scrollTo(0, 0);
+      return;
+    }
+    show("home");
+    var t = id && id !== "top" ? document.getElementById(id) : null;
+    if (t) { t.scrollIntoView({ behavior: "smooth", block: "start" }); }
+    else { window.scrollTo(0, 0); }
+  }
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest("[data-go]");
+    if (!a) return;
+    e.preventDefault();
+    go(a.getAttribute("data-go"));
+  });
+  try { if (location.hash === "#projects") { show("projects"); } } catch (e) {}
+
+  /* Experience tabs */
+  document.querySelectorAll(".tab").forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      var key = tab.getAttribute("data-tab");
+      document.querySelectorAll(".tab").forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        document.getElementById("panel-" + t.getAttribute("data-tab")).hidden = !on;
+      });
+    });
+  });
+
+  /* Skills bars: fill and count up when scrolled into view, replay on re-entry */
+  var card = document.getElementById("skillsCard");
+  if (card) {
+    var pcts = [].slice.call(card.querySelectorAll(".pct"));
+    var raf = 0;
+    var setPct = function (k) {
+      pcts.forEach(function (p) { p.textContent = Math.round(Number(p.getAttribute("data-v")) * k) + "%"; });
+    };
+    var run = function () {
+      cancelAnimationFrame(raf);
+      var start = performance.now();
+      (function step(t) {
+        var k = Math.min(1, (t - start) / 1500);
+        setPct(1 - Math.pow(1 - k, 3));
+        if (k < 1) raf = requestAnimationFrame(step);
+      })(start);
+    };
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if ("IntersectionObserver" in window && !reduce) {
+      card.classList.add("armed");
+      setPct(0);
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { card.classList.add("in"); run(); }
+          else { card.classList.remove("in"); cancelAnimationFrame(raf); setPct(0); }
+        });
+      }, { threshold: 0.3 }).observe(card);
+    }
+  }
+
+  /* Profile photo: fixed file profil-belinda.jpeg, frame stays neutral if the file is missing */
+  var photoImg = document.getElementById("photoImg");
+  if (photoImg) photoImg.addEventListener("error", function () { photoImg.parentNode.classList.add("missing"); });
+
+  /* Project viewer: click a tile to open it; carousel when a tile lists several images (separate with |) */
+  var lbEl = document.getElementById("lightbox");
+  var lbImg = document.getElementById("lbImg");
+  var lbSlides = [], lbIdx = 0, lbFocus = null;
+  function lbRender() {
+    lbImg.src = encodeURI(lbSlides[lbIdx]);
+    var many = lbSlides.length > 1;
+    document.getElementById("lbCount").textContent = many ? (lbIdx + 1) + " / " + lbSlides.length : "";
+    document.getElementById("lbPrev").hidden = !many;
+    document.getElementById("lbNext").hidden = !many;
+    var d = document.getElementById("lbDots");
+    d.innerHTML = "";
+    if (many) lbSlides.forEach(function (_, i) { var n = document.createElement("i"); if (i === lbIdx) n.className = "on"; d.appendChild(n); });
+  }
+  function lbOpen(tile) {
+    lbSlides = tile.getAttribute("data-imgs").split("|");
+    lbIdx = 0; lbFocus = tile;
+    document.getElementById("lbTitle").textContent = tile.getAttribute("data-title") || "";
+    lbImg.alt = tile.getAttribute("data-title") || "";
+    lbRender(); lbEl.hidden = false; root.classList.add("locked");
+    document.getElementById("lbClose").focus();
+  }
+  function lbClose() { lbEl.hidden = true; root.classList.remove("locked"); if (lbFocus) lbFocus.focus(); }
+  function lbStep(n) { if (lbSlides.length < 2) return; lbIdx = (lbIdx + n + lbSlides.length) % lbSlides.length; lbRender(); }
+  document.querySelectorAll("[data-imgs]").forEach(function (t) { t.addEventListener("click", function () { lbOpen(t); }); });
+  document.getElementById("lbClose").addEventListener("click", lbClose);
+  document.getElementById("lbPrev").addEventListener("click", function () { lbStep(-1); });
+  document.getElementById("lbNext").addEventListener("click", function () { lbStep(1); });
+  lbEl.addEventListener("click", function (e) { if (e.target === lbEl) lbClose(); });
+  document.addEventListener("keydown", function (e) {
+    if (lbEl.hidden) return;
+    if (e.key === "Escape") lbClose();
+    else if (e.key === "ArrowLeft") lbStep(-1);
+    else if (e.key === "ArrowRight") lbStep(1);
+  });
+  var tx = null;
+  lbEl.addEventListener("touchstart", function (e) { tx = e.touches[0].clientX; }, { passive: true });
+  lbEl.addEventListener("touchend", function (e) { if (tx === null) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 40) lbStep(dx < 0 ? 1 : -1); tx = null; }, { passive: true });
+
+  /* Theme */
+  try { var saved = localStorage.getItem("af-theme"); if (saved) root.setAttribute("data-theme", saved); } catch (e) {}
+  document.getElementById("themeBtn").addEventListener("click", function () {
+    var cur = root.getAttribute("data-theme");
+    if (!cur) cur = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    var next = cur === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try { localStorage.setItem("af-theme", next); } catch (e) {}
+  });
+
+})();
+</script>
+</body></html>
