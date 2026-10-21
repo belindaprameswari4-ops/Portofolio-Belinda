@@ -1,11 +1,15 @@
-<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Belinda Prameswari Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Great+Vibes&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* Layout: design-studio portfolio. Welcome scene is a design canvas (rulers, bezier pen path, selection box, color wheel, toolbar).
-   Home view = profile, skills, experience (2 tabs), certifications. Project view = design work and projects.
+   Home view = profile, skills, experience, certifications. Project view = design work and projects.
    Palette: azure, sea teal, deep harbor blue, gold. Type: Bricolage Grotesque (display), Public Sans (body), IBM Plex Mono (data), Great Vibes (script). */
 :root {
   --bg: #2f86e6;
@@ -58,12 +62,15 @@
 }
 
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+[hidden]:not([hidden=until-found i]) { display: none !important; }
+img { max-width: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: env(safe-area-inset-top, 0px); }
 html.locked, html.locked body { overflow: hidden; }
 html, body { cursor: var(--cur, auto); }
 a, button, [data-go] { cursor: var(--cur-link, pointer); }
 .spark { position: fixed; z-index: 200; width: 9px; height: 9px; margin: -4px 0 0 -4px; border-radius: 2px; pointer-events: none; animation: spark .75s ease-out forwards; }
 body {
+  margin: 0;
   background-color: var(--bg);
   background-image:
     radial-gradient(900px 420px at 75% 0%, var(--glow), transparent 70%),
@@ -394,6 +401,8 @@ footer { padding-block: 16px 40px; color: var(--on-bg); font-size: 13px; display
 .exp-photo img { display: block; width: 100%; max-height: 220px; object-fit: cover; }
 .cert-open .cert-img { display: grid; }
 </style>
+</head>
+<body>
 
 <!-- Welcome scene: design canvas -->
 <div class="welcome" id="welcome" role="dialog" aria-label="Welcome">
@@ -474,7 +483,8 @@ footer { padding-block: 16px 40px; color: var(--on-bg); font-size: 13px; display
           <div class="script">Hi, I'm</div>
           <h1>Belinda Prameswari</h1>
           <p class="role">Social Media Design · Marketing Visual · Ui/Ux Design</p>
-           <p class="lead">Creative Multimedia Engineering student at <strong>Electronic Engineering Polytechnic Institute of Surabaya (EEPIS)</strong> with a strong passion for <strong>graphic design, UI/UX design, and video editing</strong>. Experienced in creating visual content, designing user-friendly interfaces, producing engaging videos, and developing creative multimedia projects. Proficient in visual communication, digital content creation, and design tools, with a keen eye for detail and a commitment to delivering innovative and impactful visual experiences.</p>
+          <p class="lead">Creative Multimedia Engineering student at <strong>Electronic Engineering Polytechnic Institute of Surabaya (EEPIS)</strong> with a strong passion for <strong>graphic design, UI/UX design, and video editing</strong>. Experienced in creating visual content, designing user-friendly interfaces, producing engaging videos, and developing creative multimedia projects. Proficient in visual communication, digital content creation, and design tools, with a keen eye for detail and a commitment to delivering innovative and impactful visual experiences.</p>
+          <div class="badges">
             <span class="badge">BNSP Junior Graphic Design</span>
             <span class="badge">+3 more certifications</span>
           </div>
@@ -484,7 +494,7 @@ footer { padding-block: 16px 40px; color: var(--on-bg); font-size: 13px; display
           </div>
         </div>
         <aside class="id-card" aria-label="Fakta singkat">
-          <!-- Foto profil: simpan file bernama profil-belinda.jpeg di folder yang sama dengan file ini -->
+          <!-- Foto profil: simpan file bernama foto-belinda.jpeg di folder yang sama dengan file ini -->
           <div class="photo">
             <img id="photoImg" src="foto-belinda.jpeg" alt="Foto Belinda Prameswari">
           </div>
@@ -509,7 +519,7 @@ footer { padding-block: 16px 40px; color: var(--on-bg); font-size: 13px; display
             <div class="bar" style="--v:95;--i:0"><div class="bar-top"><span>Social Media Design</span><b class="pct" data-v="95">95%</b></div><div class="track"><div class="fill"></div></div></div>
             <div class="bar" style="--v:90;--i:1"><div class="bar-top"><span>Ui/Ux Design</span><b class="pct" data-v="90">90%</b></div><div class="track"><div class="fill"></div></div></div>
             <div class="bar" style="--v:85;--i:2"><div class="bar-top"><span>Editor Video</span><b class="pct" data-v="85">85%</b></div><div class="track"><div class="fill"></div></div></div>
-            <div class="bar" style="--v:75;--i:3"><div class="bar-top"><span>Fotografi</span><b class="pct" data-v="75">80%</b></div><div class="track"><div class="fill"></div></div></div>
+            <div class="bar" style="--v:80;--i:3"><div class="bar-top"><span>Fotografi</span><b class="pct" data-v="80">80%</b></div><div class="track"><div class="fill"></div></div></div>
             <div class="bar" style="--v:65;--i:4"><div class="bar-top"><span>Branding</span><b class="pct" data-v="65">65%</b></div><div class="track"><div class="fill"></div></div></div>
           </div>
         </div>
@@ -517,8 +527,8 @@ footer { padding-block: 16px 40px; color: var(--on-bg); font-size: 13px; display
           <h3>Design and video</h3>
           <div class="chips"><span class="chip">Adobe Illustrator</span><span class="chip">Adobe Photoshop</span><span class="chip">Canva</span><span class="chip">CapCut</span></div>
           <hr class="divider">
-          <h3 style="margin-top:18px">Database & Programming</h3>
-          <div class="chips"><span class="chip">Odoo,</span><span class="chip">XAMPP</span><span class="chip">HTML</span><span class="chip">Python</span></div>
+          <h3 style="margin-top:18px">Database &amp; Programming</h3>
+          <div class="chips"><span class="chip">Odoo</span><span class="chip">XAMPP</span><span class="chip">HTML</span><span class="chip">Python</span></div>
           <hr class="divider">
           <h3 style="margin-top:18px">Office</h3>
           <div class="chips"><span class="chip">Microsoft Word</span><span class="chip">Microsoft Excel</span><span class="chip">Microsoft PowerPoint</span></div>
@@ -742,6 +752,11 @@ footer { padding-block: 16px 40px; color: var(--on-bg); font-size: 13px; display
       window.scrollTo(0, 0);
       return;
     }
+    /* Kontak ada di luar kedua view, jadi cukup scroll tanpa mengganti view */
+    if (id === "contact") {
+      document.getElementById("contact").scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
     show("home");
     var t = id && id !== "top" ? document.getElementById(id) : null;
     if (t) { t.scrollIntoView({ behavior: "smooth", block: "start" }); }
@@ -758,11 +773,11 @@ footer { padding-block: 16px 40px; color: var(--on-bg); font-size: 13px; display
   /* Experience tabs */
   document.querySelectorAll(".tab").forEach(function (tab) {
     tab.addEventListener("click", function () {
-      var key = tab.getAttribute("data-tab");
       document.querySelectorAll(".tab").forEach(function (t) {
         var on = t === tab;
         t.setAttribute("aria-selected", on ? "true" : "false");
-        document.getElementById("panel-" + t.getAttribute("data-tab")).hidden = !on;
+        var panel = document.getElementById("panel-" + t.getAttribute("data-tab"));
+        if (panel) panel.hidden = !on;
       });
     });
   });
@@ -797,7 +812,7 @@ footer { padding-block: 16px 40px; color: var(--on-bg); font-size: 13px; display
     }
   }
 
-  /* Profile photo: fixed file profil-belinda.jpeg, frame stays neutral if the file is missing */
+  /* Profile photo: fixed file foto-belinda.jpeg, frame stays neutral if the file is missing */
   var photoImg = document.getElementById("photoImg");
   if (photoImg) photoImg.addEventListener("error", function () { photoImg.parentNode.classList.add("missing"); });
 
@@ -852,4 +867,5 @@ footer { padding-block: 16px 40px; color: var(--on-bg); font-size: 13px; display
 
 })();
 </script>
-</body></html>
+</body>
+</html>
